@@ -43,7 +43,7 @@ Create a Cloudflare D1 database named `malikz-tool`. In the GitHub repository's 
 
 Set the Actions repository variable `CLOUDFLARE_DEPLOY_ENABLED` to `true`, then run **Actions → Deploy private Cloudflare service → Run workflow**. The workflow applies the D1 migration, creates the Worker, installs its secrets, and deploys it again with those secrets active. Until the secrets are in place, the Worker rejects application API requests. Set `MALIKZ_API_URL` in Vercel to the deployed Worker address and redeploy the Vercel project. Remove `MALIKZ_BOOTSTRAP_SECRET` from GitHub Actions secrets and delete the Worker secret after the first owner account is created. Keep `MALIKZ_SESSION_SECRET` and `MALIKZ_PROXY_SECRET` private and different from one another.
 
-The project needs one account-side connection step: neither a Vercel project nor Cloudflare account credentials were available to this build session. No production URL or deployment is claimed until those services are connected and the live sign-in/data flows are checked.
+The frontend is deployed at https://malikz-tool.vercel.app. The Vercel build and website are live, but the Cloudflare Worker and D1 backend are not connected yet. Until the Cloudflare deployment and Vercel production secrets below are configured, the website will show that the private service is unavailable; owner sign-in and saved repair records are not ready for real use.
 
 ## First sign-in
 
