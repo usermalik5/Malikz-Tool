@@ -1,0 +1,80 @@
+:root { font-synthesis: none; text-rendering: optimizeLegibility; }
+* { box-sizing: border-box; }
+body { min-width: 320px; }
+.app-shell { min-height: 100vh; }
+.drawer-paper { width: 252px; border-right: 1px solid #27364b !important; background: #121d2c !important; color: #eef4fb !important; }
+.desktop-drawer { box-sizing: border-box; }
+.nav-content { display: flex; flex-direction: column; height: 100%; padding: 20px 14px 16px; }
+.brand-lockup { display: flex; gap: 12px; align-items: center; padding: 6px 10px 30px; }
+.brand-mark { background: linear-gradient(145deg,#69aaff,#4376c5) !important; color: white !important; font-size: 21px !important; font-weight: 850 !important; }
+.nav-label { color: #91a4ba; padding: 0 12px; margin: 3px 0 9px !important; letter-spacing: .1em !important; }
+.admin-label { margin-top: 27px !important; }
+.nav-item { border-radius: 10px !important; min-height: 46px; color: #c3d1e1 !important; margin-bottom: 4px !important; }
+.nav-item .MuiListItemIcon { color: #9cafc5; min-width: 39px; }
+.nav-item.Mui-selected { color: #fff !important; background: #253a55 !important; }
+.nav-item.Mui-selected .MuiListItemIcon { color: #87baff; }
+.nav-footer { display: flex; align-items: center; gap: 8px; color: #a3b3c6; margin-top: auto; padding: 14px 10px 4px; border-top: 1px solid #2a3a4d; }
+.main-column { min-height: 100vh; }
+.topbar { z-index: 1000 !important; border-bottom: 1px solid rgba(110,132,159,.18); backdrop-filter: blur(14px); }
+.topbar-inner { min-height: 76px !important; }
+.topbar-title { margin-left: 9px; line-height: 1.15; }
+.user-avatar { width: 36px !important; height: 36px !important; background: #2a5e93 !important; margin-left: 12px; font-size: 15px !important; }
+.page-content { max-width: 1440px; padding: 30px 34px 22px; margin: 0 auto; }
+.setup-banner,.error-banner { margin-bottom: 18px; }
+.loading-line { position: relative; top: -27px; margin-bottom: -5px; }
+.welcome-row,.page-intro,.panel-heading { display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+.stat-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
+.stat-content { display: flex; align-items: center; gap: 16px; padding: 21px !important; }
+.stat-icon,.tool-icon { width: 48px !important; height: 48px !important; color: #72acfc !important; background: rgba(76,140,222,.13) !important; }
+.section-heading { margin-bottom: 15px; }
+.tool-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
+.tool-card { min-height: 230px; }
+.page-footnote { border-top: 1px solid rgba(110,132,159,.2); margin-top: 34px; padding-top: 16px; color: #8495aa; }
+.page-intro { margin-bottom: 0; }
+.page-intro .MuiTypography-h4 { line-height: 1.2; }
+.page-intro .MuiButton-root { flex-shrink: 0; }
+.subtle-note { color: #8394aa; margin-top: 14px !important; }
+.device-row,.file-facts,.hash-result { padding: 14px 16px; display: flex; gap: 14px; align-items: center; margin-top: 13px; }
+.device-avatar { background: rgba(40,152,122,.14) !important; color: #38a78a !important; }
+.check-row,.feature-row { display: flex; gap: 13px; align-items: center; padding: 16px 3px; }
+.filters-bar { display: flex; align-items: center; gap: 14px; padding: 11px 16px; }
+.empty-state { display: flex; align-items: center; flex-direction: column; text-align: center; gap: 8px; padding: 50px 20px; }
+.empty-icon,.upload-icon { background: rgba(76,140,222,.13) !important; color: #72acfc !important; width: 56px !important; height: 56px !important; }
+.record-content { display: flex; align-items: flex-start; gap: 12px; }
+.record-title { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.upload-zone { min-height: 240px; border: 1px dashed #6c809a; border-radius: 16px; background: rgba(84,126,180,.05); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; text-align: center; padding: 22px; }
+.upload-zone input[type=file] { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; clip-path: inset(50%); }
+.file-facts { display: block; line-height: 2; }
+.hash-result { display: block; }
+.hash-value { font-family: ui-monospace,SFMono-Regular,Menlo,monospace !important; overflow-wrap: anywhere; user-select: all; margin: 7px 0 12px !important; }
+.drawer-paper .nav-item { color: #c3d1e1 !important; }
+.auth-page { min-height: 100vh; display: grid; place-items: center; padding: 20px; background: radial-gradient(ellipse at 10% 15%, rgba(52,113,180,.19), transparent 38%), radial-gradient(ellipse at 90% 85%, rgba(24,169,153,.1), transparent 34%); }
+.auth-card { width: min(100%, 460px); }
+.auth-card .MuiCardContent-root { padding: 30px; }
+.auth-brand { padding: 0 0 28px; }
+@media (max-width: 900px) {
+  .page-content { padding: 24px 22px 18px; }
+  .tool-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 640px) {
+  .topbar-inner { min-height: 66px !important; padding-left: 10px !important; padding-right: 13px !important; }
+  .topbar-title .MuiTypography-caption { font-size: 10px; }
+  .topbar-title .MuiTypography-h6 { font-size: 17px; }
+  .page-content { padding: 19px 14px 18px; }
+  .welcome-row,.page-intro { align-items: flex-start; flex-direction: column; gap: 13px; }
+  .welcome-row .MuiTypography-h4 { font-size: 27px; }
+  .page-intro .MuiTypography-h4 { font-size: 28px; }
+  .stat-grid { grid-template-columns: 1fr; gap: 10px; }
+  .stat-content { padding: 14px !important; }
+  .tool-grid { grid-template-columns: 1fr; gap: 12px; }
+  .tool-card { min-height: 0; }
+  .panel-heading { align-items: flex-start; flex-wrap: wrap; }
+  .panel-heading .MuiButton-root { width: 100%; }
+  .check-row { align-items: flex-start; }
+  .check-row .MuiSwitch-root { margin-left: -8px; }
+  .filters-bar { flex-wrap: wrap; gap: 9px; }
+  .filters-bar .MuiTypography-root { width: 100%; padding-left: 30px; }
+  .device-row { align-items: flex-start; flex-wrap: wrap; }
+  .device-row .MuiChip-root { margin-left: 58px; }
+  .auth-card .MuiCardContent-root { padding: 22px; }
+}
