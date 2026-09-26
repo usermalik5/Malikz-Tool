@@ -24,7 +24,7 @@ export default async function handler(request: VercelRequest, response: VercelRe
   const routedPath = request.query.path;
   const normalizedRoute = Array.isArray(routedPath) ? routedPath.join('/') : routedPath;
   const path = typeof normalizedRoute === 'string' && normalizedRoute.trim()
-    ? `/api/${normalizedRoute.replace(/^\\/+/, '')}`
+    ? '/api/' + normalizedRoute.replace(/^\/+/, '')
     : (request.url || '').split('?')[0];
   if (!allowedRoutes.has(path)) return writeError(response, 404, 'This service path is not available.');
   if (!['GET', 'POST', 'PUT'].includes(request.method || '')) return writeError(response, 405, 'This request method is not available.');
