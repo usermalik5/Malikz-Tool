@@ -21,7 +21,11 @@ function writeError(response: VercelResponse, status: number, message: string) {
 export default async function handler(request: VercelRequest, response: VercelResponse) {
   response.setHeader('Cache-Control', 'no-store');
   response.setHeader('X-Content-Type-Options', 'nosniff');
-  const path = (request.url || '').split('?')[0];
+  const routedPath = request.query.path;
+  const normalizedRoute = Array.isArray(routedPath) ? routedPath.join('/') : routedPath;
+  const path = typeof normalizedRoute === 'string' && normalizedRoute.trim()
+    ? `/api/${normalizedRoute.replace(/^\\/+/, '')}`
+    : (request.url || '').split('?')[0];
   if (!allowedRoutes.has(path)) return writeError(response, 404, 'This service path is not available.');
   if (!['GET', 'POST', 'PUT'].includes(request.method || '')) return writeError(response, 405, 'This request method is not available.');
 
