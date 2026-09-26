@@ -1,0 +1,9 @@
+{
+  "name": "malikz-tool-api",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": { "deploy": "wrangler deploy", "dev": "wrangler dev", "typecheck": "tsc --noEmit" },
+  "dependencies": {},
+  "devDependencies": { "@cloudflare/workers-types": "4.20250920.0", "typescript": "5.9.2", "wrangler": "4.36.0" }
+}
