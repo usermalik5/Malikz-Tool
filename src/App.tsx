@@ -171,7 +171,7 @@ function DeviceCheck({ onError, onNotice }: { onError: (message: string) => void
       {!hasScanned && <Typography className="subtle-note">Use Chrome or Edge on a computer with a secure website connection for USB device details.</Typography>}
       {hasScanned && devices.length === 0 && !scanning && <Alert severity="info" sx={{ mt: 2 }}>No device was selected. You can still use the preparation checklist below.</Alert>}
       {devices.map((device, index) => <Paper className="device-row" key={`${device.vendorId}-${device.productId}-${index}`}><Avatar className="device-avatar"><MemoryRounded /></Avatar><Box><Typography fontWeight={700}>{device.name}</Typography><Typography variant="body2" color="text.secondary">USB ID {device.vendorId.toString(16).padStart(4, '0')}:{device.productId.toString(16).padStart(4, '0')}</Typography></Box><Chip size="small" color="success" label="Visible to browser" /></Paper>)}
-    </Card>
+    </CardContent></Card>
     <Card><CardContent><Typography variant="h6" fontWeight={750}>Before you begin</Typography><Typography color="text.secondary" sx={{ mb: 1.5 }}>Tick each step as you complete it. This checklist does not change your device.</Typography>
       <Stack divider={<Divider flexItem />}>
         {checks.map(([key, title, description]) => <Box className="check-row" key={key}><Switch checked={checked.includes(key)} onChange={event => setChecked(current => event.target.checked ? [...current, key] : current.filter(item => item !== key))} inputProps={{ 'aria-label': title }} /><Box><Typography fontWeight={650}>{title}</Typography><Typography variant="body2" color="text.secondary">{description}</Typography></Box></Box>)}
